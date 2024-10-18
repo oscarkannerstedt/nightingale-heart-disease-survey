@@ -6,10 +6,7 @@ interface SurveyAnswer {
   id: string;
   date: string;
   participantID: string;
-  answers: Array<{
-    question: string;
-    response: string;
-  }>;
+  answers: string[];
 }
 
 interface ApiError {
@@ -22,12 +19,13 @@ export const DataFetcher = () => {
 
   const accessToken = import.meta.env.VITE_ACCESS_TOKEN as string;
   const projectId = "8e890f0c-9ec0-49e7-a413-19812cade812";
+  const targetParticipantID = "5fd544f3-7719-423a-b885-25aa3cbaf916";
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `/api/projects/${projectId}/surveyanswers?limit=25`,
+          `/api/projects/${projectId}/surveyanswers`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`,
@@ -35,7 +33,14 @@ export const DataFetcher = () => {
             },
           }
         );
-        setData(response.data.surveyAnswers);
+
+        console.log("API response: ", response.data);
+
+        const filteredData = response.data.surveyAnswers.filter(
+          (answer: SurveyAnswer) => answer.participantID === targetParticipantID
+        );
+
+        setData(filteredData);
       } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
           setError({ message: error.message });

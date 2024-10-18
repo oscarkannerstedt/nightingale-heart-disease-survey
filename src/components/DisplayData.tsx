@@ -1,46 +1,34 @@
-interface Answer {
-  question: string;
-  response: string;
-}
-
-interface DataItem {
+interface SurveyAnswer {
   id: string;
   participantID: string;
   date: string;
-  answers: Answer[];
+  answers: string[];
 }
 
 interface DisplayDataProps {
-  data: DataItem[];
+  data: SurveyAnswer[];
 }
 
 export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
   console.log("Data: ", data);
 
-  const filteredData = data.map((item) => ({
-    id: item.id,
-    participantID: item.participantID,
-    date: item.date,
-    answers: item.answers,
-  }));
+  const filteredData = data.flatMap((item) =>
+    item.answers.map((answer) => ({
+      participantID: item.participantID,
+      date: item.date,
+      response: answer,
+    }))
+  );
 
   return (
     <div>
       <ul>
         {filteredData.length > 0 ? (
-          filteredData.map((item) => (
-            <li key={item.id}>
+          filteredData.map((item, index) => (
+            <li key={index}>
               <p>ID: {item.participantID}</p>
               <p>Date: {item.date}</p>
-              <p>Answers:</p>
-              <ul>
-                {item.answers.map((answer, index) => (
-                  <li key={index}>
-                    <p>Question: {answer.question}</p>
-                    <p>Response: {answer.response}</p>
-                  </li>
-                ))}
-              </ul>
+              <p>Answers: {item.response}</p>
             </li>
           ))
         ) : (
