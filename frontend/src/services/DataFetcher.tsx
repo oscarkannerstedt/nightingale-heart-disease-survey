@@ -33,7 +33,6 @@ export const DataFetcher = () => {
             },
           }
         );
-
         console.log("API response: ", response.data);
 
         const filteredData = response.data.surveyAnswers.filter(
