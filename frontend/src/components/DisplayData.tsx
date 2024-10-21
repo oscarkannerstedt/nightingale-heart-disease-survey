@@ -1,40 +1,25 @@
-import React from 'react'
+import React from "react";
 import { questions } from "../qna/qustions";
-
-interface Answer {
-  question: string;
-  response: string;
-}
-
-interface DataItem {
-  id: string;
-  participantID: string;
-  date: string;
-  answers: Answer[];
-  stepIdentifier: string;
-}
+import { SurveyAnswer } from "../types/surveyAnswer";
+import { calculateTotalScore } from "../utils/calculateTotalScore";
 
 interface DisplayDataProps {
-  data: DataItem[];
+  data: SurveyAnswer[];
 }
 
 export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
   console.log("Data: ", data);
 
-  const filteredData = data.map((item) => ({
-    id: item.id,
-    participantID: item.participantID,
-    date: item.date,
-    answers: item.answers,
-    stepIdentifier: item.stepIdentifier,
-  }));
+  const { filteredData, totalScore } = calculateTotalScore(data);
 
   return (
     <div>
-      <ul className='cards'>
+      <h1>Data from specifik user</h1>
+      <h2>Total score: {totalScore}</h2>
+      <ul className="cards">
         {questions.length > 0 ? (
           questions.map((question) => (
-            <li key={question.id} className='question-card'>
+            <li key={question.id} className="question-card">
               {question.title && <h2>{question.title}</h2>}
               {question.question && <p>{question.question}</p>}
             </li>
@@ -43,28 +28,20 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
           <li>No questions available</li>
         )}
       </ul>
-      {/*
+
       <ul>
         {filteredData.length > 0 ? (
-          filteredData.map((item) => (
-            <li key={item.id}>
+          filteredData.map((item, index) => (
+            <li key={index}>
               <p>Participant ID: {item.participantID}</p>
+              <p>Answers: {item.response}</p>
               <p>Date: {item.date}</p>
-              <ul>
-                {item.answers.map((answer, index) => (
-                  <li key={index}>
-                    <p>Question: {getQuestionByIndex(index)}</p>
-                    <p>Response: {answer.response}</p>
-                  </li>
-                ))}
-              </ul>
             </li>
           ))
         ) : (
-          <li>Ingen data tillgänglig</li>
+          <li>No data available</li>
         )}
       </ul>
-      */}
-    </div >
+    </div>
   );
 };
