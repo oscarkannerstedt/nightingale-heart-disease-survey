@@ -1,9 +1,5 @@
-interface SurveyAnswer {
-  id: string;
-  participantID: string;
-  date: string;
-  answers: string[];
-}
+import { SurveyAnswer } from "../types/surveyAnswer";
+import { calculateTotalScore } from "../utils/calculateTotalScore";
 
 interface DisplayDataProps {
   data: SurveyAnswer[];
@@ -12,16 +8,11 @@ interface DisplayDataProps {
 export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
   console.log("Data: ", data);
 
-  const filteredData = data.flatMap((item) =>
-    item.answers.map((answer) => ({
-      participantID: item.participantID,
-      date: item.date,
-      response: answer,
-    }))
-  );
+  const { filteredData, totalScore } = calculateTotalScore(data);
 
   return (
     <div>
+      <h2>Total score: {totalScore}</h2>
       <ul>
         {filteredData.length > 0 ? (
           filteredData.map((item, index) => (
@@ -32,7 +23,7 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
             </li>
           ))
         ) : (
-          <li>Ingen data tillgänglig</li>
+          <li>No data available</li>
         )}
       </ul>
     </div>
