@@ -1,3 +1,6 @@
+import React from 'react'
+import { questions } from "../qna/qustions";
+
 interface Answer {
   question: string;
   response: string;
@@ -8,6 +11,7 @@ interface DataItem {
   participantID: string;
   date: string;
   answers: Answer[];
+  stepIdentifier: string;
 }
 
 interface DisplayDataProps {
@@ -22,21 +26,34 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
     participantID: item.participantID,
     date: item.date,
     answers: item.answers,
+    stepIdentifier: item.stepIdentifier,
   }));
 
   return (
     <div>
+      <ul className='cards'>
+        {questions.length > 0 ? (
+          questions.map((question) => (
+            <li key={question.id} className='question-card'>
+              {question.title && <h2>{question.title}</h2>}
+              {question.question && <p>{question.question}</p>}
+            </li>
+          ))
+        ) : (
+          <li>No questions available</li>
+        )}
+      </ul>
+      {/*
       <ul>
         {filteredData.length > 0 ? (
           filteredData.map((item) => (
             <li key={item.id}>
-              <p>ID: {item.participantID}</p>
+              <p>Participant ID: {item.participantID}</p>
               <p>Date: {item.date}</p>
-              <p>Answers:</p>
               <ul>
                 {item.answers.map((answer, index) => (
                   <li key={index}>
-                    <p>Question: {answer.question}</p>
+                    <p>Question: {getQuestionByIndex(index)}</p>
                     <p>Response: {answer.response}</p>
                   </li>
                 ))}
@@ -47,6 +64,7 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
           <li>Ingen data tillgänglig</li>
         )}
       </ul>
-    </div>
+      */}
+    </div >
   );
 };
