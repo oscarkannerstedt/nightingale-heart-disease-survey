@@ -12,6 +12,7 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
 
   return (
     <div>
+      <h1>Data from specifik user</h1>
       <h2>Total score: {totalScore}</h2>
       <ul>
         {filteredData.length > 0 ? (

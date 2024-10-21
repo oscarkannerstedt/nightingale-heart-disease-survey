@@ -58,7 +58,6 @@ export const DataFetcher = () => {
 
   return (
     <div>
-      <h1>Data från API:</h1>
       <DisplayData data={data} />
     </div>
   );
