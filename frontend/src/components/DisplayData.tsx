@@ -8,9 +8,19 @@ interface DisplayDataProps {
 }
 
 export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
-  console.log("Data: ", data);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
   // const { filteredData, totalScore } = calculateTotalScore(data);
+
+  const handleNextQuestion = () => {
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedAnswer(null);
+    } else {
+      console.log("All answers have been answered");
+    }
+  };
 
   return (
     <div>
