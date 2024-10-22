@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { questions } from "../qna/qustions";
 import { SurveyAnswer } from "../types/surveyAnswer";
 // import { calculateTotalScore } from "../utils/calculateTotalScore";
@@ -7,7 +7,7 @@ interface DisplayDataProps {
   data: SurveyAnswer[];
 }
 
-export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
+export const DisplayData: React.FC<DisplayDataProps> = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
@@ -22,11 +22,23 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
     }
   };
 
+  const currentQuestion = questions[currentQuestionIndex];
+
   return (
     <div>
-      {/* <h1>Data from specifik user</h1> */}
       {/* <h2>Total score: {totalScore}</h2> */}
-      <ul className="cards">
+      <h1>Questions about heart diseases</h1>
+
+      {currentQuestion && (
+        <div>
+          <h2>{currentQuestion.title}</h2>
+          <p>{currentQuestion.question}</p>
+
+          <button onClick={handleNextQuestion}>Next question</button>
+        </div>
+      )}
+
+      {/* <ul className="cards">
         {questions.length > 0 ? (
           questions.map((question) => (
             <li key={question.id} className="question-card">
@@ -37,7 +49,7 @@ export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
         ) : (
           <li>No questions available</li>
         )}
-      </ul>
+      </ul> */}
 
       {/* <ul>
         {filteredData.length > 0 ? (
