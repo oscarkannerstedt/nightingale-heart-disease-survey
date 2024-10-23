@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { questions } from "../qna/qustions";
 import { SurveyAnswer } from "../types/surveyAnswer";
+import { texts } from "../qna/answers";
 // import { calculateTotalScore } from "../utils/calculateTotalScore";
+
+interface Answer {
+  id: number;
+  text: string;
+}
 
 interface DisplayDataProps {
   data: SurveyAnswer[];
@@ -22,7 +28,20 @@ export const DisplayData: React.FC<DisplayDataProps> = () => {
     }
   };
 
+  const handleAnswerSelect = (answer: string) => {
+    setSelectedAnswer(answer);
+  };
+
   const currentQuestion = questions[currentQuestionIndex];
+
+  const getAnswersForCurrentQuestion = () => {
+    const questionId = currentQuestion.id;
+    return Object.values(texts).filter(
+      (answer: Answer) => answer.id === questionId
+    );
+  };
+
+  const currentAnswers = getAnswersForCurrentQuestion();
 
   return (
     <div>
@@ -34,36 +53,28 @@ export const DisplayData: React.FC<DisplayDataProps> = () => {
           <h2>{currentQuestion.title}</h2>
           <p>{currentQuestion.question}</p>
 
+          {currentAnswers.length > 0 && (
+            <ul>
+              {currentAnswers.map((answerObj: Answer, index: number) => (
+                <li key={index}>
+                  <label>
+                    <input
+                      type="radio"
+                      name="answer"
+                      value={answerObj.text}
+                      onChange={() => handleAnswerSelect(answerObj.text)}
+                      checked={selectedAnswer === answerObj.text}
+                    />
+                    {answerObj.text}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          )}
+
           <button onClick={handleNextQuestion}>Next question</button>
         </div>
       )}
-
-      {/* <ul className="cards">
-        {questions.length > 0 ? (
-          questions.map((question) => (
-            <li key={question.id} className="question-card">
-              {question.title && <h2>{question.title}</h2>}
-              {question.question && <p>{question.question}</p>}
-            </li>
-          ))
-        ) : (
-          <li>No questions available</li>
-        )}
-      </ul> */}
-
-      {/* <ul>
-        {filteredData.length > 0 ? (
-          filteredData.map((item, index) => (
-            <li key={index}>
-              <p>Participant ID: {item.participantID}</p>
-              <p>Answers: {item.response}</p>
-              <p>Date: {item.date}</p>
-            </li>
-          ))
-        ) : (
-          <li>No data available</li>
-        )}
-      </ul> */}
     </div>
   );
 };
