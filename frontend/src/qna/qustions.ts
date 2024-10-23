@@ -140,10 +140,6 @@ export const questions = [
     },
     {
         id: "34",
-        question: "Do you have any of the following?",
-    },
-    {
-        id: "35",
         title: "Thank you for your answers!",
     },
 ];

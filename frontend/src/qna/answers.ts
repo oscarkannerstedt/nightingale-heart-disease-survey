@@ -1,8 +1,7 @@
 export const texts = [
     {
-
         1: {
-            id: "2",
+            id: "1",
             ans1: {
                 text: "Under 30",
                 points: 0,
@@ -51,7 +50,7 @@ export const texts = [
     },
     {
         2: {
-            id: "3",
+            id: "2",
             ans1: {
                 text: "Do you have diagnosed cardiovascular disease, atherosclerosis, previous heart attack, and/or previous stroke",
                 points: 100,
@@ -64,11 +63,12 @@ export const texts = [
                 text: "None of the above",
                 points: 0,
             }
+
         }
     },
     {
         3: {
-            id: "4",
+            id: "3",
             ans1: {
                 text: "Mother with Cardiovascular Disease at less than 65 years(high blood pressure, heart attack,angina, stroke, hardening of the arteries)",
                 points: 15,
@@ -85,7 +85,7 @@ export const texts = [
     },
     {
         4: {
-            id: "5",
+            id: "4",
             ans1: {
                 text: "Sedentary – moderate exercise less than once a week",
                 points: 20,
@@ -106,11 +106,12 @@ export const texts = [
                 text: "Moderate exercise(average 5 or more times per week)",
                 points: -25,
             },
+
         }
     },
     {
         5: {
-            id: "6",
+            id: "5",
             ans1: {
                 text: "Never smoked",
                 points: 0,
@@ -131,7 +132,7 @@ export const texts = [
     },
     {
         6: {
-            id: "7",
+            id: "6",
             ans1: {
                 text: "Yes",
                 points: 25,
@@ -140,11 +141,12 @@ export const texts = [
                 text: "No",
                 points: 0,
             },
+
         }
     },
     {
         7: {
-            id: "8",
+            id: "7",
             ans1: {
                 text: "Average 0 drinks daily",
                 points: 0,
@@ -165,7 +167,7 @@ export const texts = [
     },
     {
         8: {
-            id: "9",
+            id: "8",
             ans1: {
                 text: "Do you consume: Male: 5 or more drinks Female: 3 or more drinks in one sitting on a fortnightly or more frequent basis?",
                 points: 7,
@@ -178,7 +180,7 @@ export const texts = [
     },
     {
         9: {
-            id: "10",
+            id: "9",
             ans1: {
                 text: "Do you live on a main road?",
                 points: 4,
@@ -203,7 +205,7 @@ export const texts = [
     },
     {
         10: {
-            id: "11",
+            id: "10",
             ans1: {
                 text: "Death of spouse",
                 points: 30,
@@ -328,7 +330,7 @@ export const texts = [
     },
     {
         11: {
-            id: "12",
+            id: "11",
             ans1: {
                 text: "Meditation/prayer",
                 points: -5,
@@ -349,66 +351,405 @@ export const texts = [
     },
     {
         12: {
-            id: "13",
+            id: "12",
             ans1: {
                 text: "Weekly or more",
                 points: 40,
             },
             ans2: {
-                text: "Once or twice a month",
+                text: "Monthly or more",
                 points: 20,
             },
             ans3: {
-                text: "Less than once a month",
+                text: "None of the above",
                 points: 0,
             },
-        }
+        },
     },
     {
         13: {
-            id: "14",
+            id: "13",
             ans1: {
-                text: "1 to 2 bowel movements a week",
-                points: 10,
+                text: "Weekly or more",
+                points: 30,
             },
             ans2: {
-                text: "3 to 4 bowel movements a week",
-                points: 0,
+                text: "Monthly or more",
+                points: 15,
             },
             ans3: {
-                text: "More than 4 bowel movements a week",
-                points: -5,
+                text: "None of the above",
+                points: 0,
             },
-        }
+        },
     },
     {
         14: {
-            id: "15",
+            id: "14",
             ans1: {
-                text: "High in salt and fat, refined sugars",
-                points: 15,
+                text: "Weekly or more",
+                points: 25,
             },
             ans2: {
-                text: "Low in salt and fat, refined sugars",
+                text: "Monthly or more",
+                points: 12,
+            },
+            ans3: {
+                text: "None of the above",
                 points: 0,
             },
         }
     },
     {
         15: {
-            id: "16",
+            id: "15",
             ans1: {
-                text: "More than 7% (HbA1c)",
-                points: 25,
+                text: "0-4",
+                points: 6,
             },
             ans2: {
-                text: "5.5% - 7% (HbA1c)",
+                text: "5-6",
+                points: 3,
+            },
+            ans3: {
+                text: "7-8",
+                points: 0,
+            },
+            ans4: {
+                text: "More than 8 hours",
+                points: 4,
+            },
+        },
+    },
+    {
+        16: {
+            id: "16",
+            ans1: {
+                text: "Snoring",
+                points: 3,
+            },
+            ans2: {
+                text: "Obstructive sleep apnoea",
                 points: 10,
             },
             ans3: {
-                text: "Less than 5.5% (HbA1c)",
+                text: "Insomnia, difficulty falling asleep or interrupted sleep",
+                points: 3,
+            },
+            ans4: {
+                text: "None of the above",
                 points: 0,
             },
         }
+    },
+    {
+        17: {
+            id: "17",
+            ans1: {
+                text: "Yes",
+                points: 8,
+            },
+            ans2: {
+                text: "No",
+                points: 0,
+            },
+        },
+    },
+    {
+        18: {
+            id: "18",
+            ans1: {
+                text: "Yes",
+                points: 5,
+            },
+            ans2: {
+                text: "No",
+                points: 0,
+            }
+        },
+    },
+    {
+        19: {
+            id: "19",
+            ans1: {
+                text: "Less than 2 weeks",
+                points: 0,
+            },
+            ans2: {
+                text: "2 weeks - 2 months",
+                points: 2,
+            },
+            ans3: {
+                text: "2 - 6 months",
+                points: 5,
+            },
+            ans4: {
+                text: "Longer than 6 months",
+                points: 10,
+            },
+        }
+    },
+    {
+        20: {
+            id: "20",
+            ans1: {
+                text: "Do you feel your energy levels drop within an hour of eating? and / or Do you experience cravings for sweets or chocolate? and / or Do you have headaches or an inability to concentrate which is relieved by eating?",
+                points: 10,
+            },
+            ans2: {
+                text: "None of the above",
+                points: 0,
+            }
+        }
+    },
+    {
+        21: {
+            id: "21",
+            ans1: {
+                text: "Yes",
+                points: 100,
+            },
+            ans2: {
+                text: "No",
+                points: 0,
+            }
+        }
+    },
+    {
+        22: {
+            id: "22",
+            ans1: {
+                text: "Wheezing, sneezing, a runny nose, sore throat, itchy or watery eyes, coughing and/ or blocked nose",
+                points: 5
+            },
+            ans2: {
+                text: "Heart palpitations or headaches after certain foods",
+                points: 5,
+            },
+            ans3: {
+                text: "None of the above",
+                points: 0,
+            }
+        }
+    },
+    {
+        23: {
+            id: "23",
+            ans1: {
+                text: "Daily",
+                points: 30,
+            },
+            ans2: {
+                text: "Weekly",
+                points: 15,
+            },
+            ans3: {
+                text: "Monthly or less",
+                points: 5
+            },
+            ans4: {
+                text: "Never",
+                points: 0
+            }
+        }
+    },
+    {
+        24: {
+            id: "24",
+            ans1: {
+                text: "Less than once a week",
+                points: 0,
+            },
+            ans2: {
+                text: "1 - 2 times a week",
+                points: 1,
+            },
+            ans3: {
+                text: "3 - 6 times a week",
+                points: 5,
+            },
+            ans4: {
+                text: "Every day",
+                points: 10,
+            }
+        }
+    },
+    {
+        25: {
+            id: "25",
+            ans1: {
+                text: "0 - 1 serves daily",
+                points: 0,
+            },
+            ans2: {
+                text: "2 server daily",
+                points: 0,
+            },
+            ans3: {
+                text: "3 servers daily",
+                points: 2,
+            },
+            ans4: {
+                text: "4 or more serves daily",
+                points: 4,
+            },
+        }
+    },
+    {
+        26: {
+            id: "26",
+            ans1: {
+                text: "Usually none",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 2 serves daily",
+                points: 2
+            },
+            ans3: {
+                text: "More than 2 serves daily",
+                points: 8,
+            }
+        }
+    },
+    {
+        27: {
+            id: "27",
+            ans1: {
+                text: "0 - 3",
+                points: 0,
+            },
+            ans2: {
+                text: "4 - 6",
+                points: 1
+            },
+            ans3: {
+                text: "7 - 9",
+                points: 4
+            },
+            ans4: {
+                text: "10 or more",
+                points: 7
+            }
+        }
+    },
+    {
+        28: {
+            id: "28",
+            ans1: {
+                text: "Rarely",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 2 times a week",
+                points: -2
+            },
+            ans3: {
+                text: "3 - 6 times a week",
+                points: -5
+            },
+            ans4: {
+                text: "Every day",
+                points: -10
+            }
+        }
+    },
+    {
+        29: {
+            id: "29",
+            ans1: {
+                text: "Usually none",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 3 pieces daily",
+                points: -2
+            },
+            ans3: {
+                text: "4 or more pieces daily",
+                points: -3
+            }
+        }
+    },
+    {
+        30: {
+            id: "30",
+            ans1: {
+                text: "Usually none",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 2 cups daily",
+                points: -3
+            },
+            ans3: {
+                text: "3 - 4 serves daily",
+                points: -5
+            },
+            ans4: {
+                text: "5 or more serves daily",
+                points: -10
+            }
+        }
+    },
+    {
+        31: {
+            id: "31",
+            ans1: {
+                text: "Usually none",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 2 cups daily",
+                points: 0
+            },
+            ans3: {
+                text: "3 - 4 cups daily",
+                points: 2
+            },
+            ans4: {
+                text: "5 or more cups daily",
+                points: 4
+            }
+        }
+    },
+    {
+        32: {
+            id: "32",
+            ans1: {
+                text: "Less than 500 ml per week",
+                points: 0
+            },
+            ans2: {
+                text: "1 - 2 litres per week",
+                points: 2
+            },
+            ans3: {
+                text: "3 - 4 litres per week",
+                points: 4
+            },
+            ans4: {
+                text: "5 or more litres per week",
+                points: 8
+            }
+        }
+    },
+    {
+        33: {
+            id: "33",
+            ans1: {
+                text: "0 - 500 ml",
+                points: 7
+            },
+            ans2: {
+                text: "501 ml - 1.25 litres",
+                points: 3
+            },
+            ans3: {
+                text: "More than 1.25 litres",
+                points: 0
+            }
+        }
     }
-];
+
+]

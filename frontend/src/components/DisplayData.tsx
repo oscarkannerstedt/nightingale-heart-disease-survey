@@ -41,6 +41,9 @@ interface QuestionAnswers {
   ans28?: Answer;
   ans29?: Answer;
   ans30?: Answer;
+  ans31?: Answer;
+  ans32?: Answer;
+  ans33?: Answer;
 }
 
 type TextsArray = Array<{ [key: number]: QuestionAnswers }>;
