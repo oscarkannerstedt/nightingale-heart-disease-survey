@@ -57,7 +57,7 @@ export const DataFetcher = () => {
 
   return (
     <div>
-      <DisplayData data={data} />
+      <DisplayData />
     </div>
   );
 };

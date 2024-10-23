@@ -5,15 +5,53 @@ import { texts } from "../qna/answers";
 // import { calculateTotalScore } from "../utils/calculateTotalScore";
 
 interface Answer {
-  id: number;
   text: string;
+  points: number;
 }
 
+interface QuestionAnswers {
+  id: string;
+  ans1?: Answer;
+  ans2?: Answer;
+  ans3?: Answer;
+  ans4?: Answer;
+  ans5?: Answer;
+  ans6?: Answer;
+  ans7?: Answer;
+  ans8?: Answer;
+  ans9?: Answer;
+  ans10?: Answer;
+  ans11?: Answer;
+  ans12?: Answer;
+  ans13?: Answer;
+  ans14?: Answer;
+  ans15?: Answer;
+  ans16?: Answer;
+  ans17?: Answer;
+  ans18?: Answer;
+  ans19?: Answer;
+  ans20?: Answer;
+  ans21?: Answer;
+  ans22?: Answer;
+  ans23?: Answer;
+  ans24?: Answer;
+  ans25?: Answer;
+  ans26?: Answer;
+  ans27?: Answer;
+  ans28?: Answer;
+  ans29?: Answer;
+  ans30?: Answer;
+}
+
+type TextsArray = Array<{ [key: number]: QuestionAnswers }>;
+
+/*
 interface DisplayDataProps {
   data: SurveyAnswer[];
 }
+*/
 
-export const DisplayData: React.FC<DisplayDataProps> = () => {
+export const DisplayData: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
 
@@ -36,9 +74,19 @@ export const DisplayData: React.FC<DisplayDataProps> = () => {
 
   const getAnswersForCurrentQuestion = () => {
     const questionId = currentQuestion.id;
-    return Object.values(texts).filter(
-      (answer: Answer) => answer.id === questionId
-    );
+
+    const matchingQuestion = texts.find((text) => text[Number(questionId)]);
+
+    if (matchingQuestion) {
+      const answersObject = matchingQuestion[Number(questionId)] as QuestionAnswers; // Access the answers for the matched question
+
+      // Use Object.values to get answers and filter for valid answer objects
+      return Object.values(answersObject).filter(
+        (answer: any) => typeof answer === 'object' && answer.text // Only return answer objects
+      );
+    }
+
+    return [];
   };
 
   const currentAnswers = getAnswersForCurrentQuestion();
@@ -51,7 +99,7 @@ export const DisplayData: React.FC<DisplayDataProps> = () => {
       {currentQuestion && (
         <div>
           <h2>{currentQuestion.title}</h2>
-          <p>{currentQuestion.question}</p>
+          {currentQuestion.question && <p>{currentQuestion.question}</p>}
 
           {currentAnswers.length > 0 && (
             <ul>
