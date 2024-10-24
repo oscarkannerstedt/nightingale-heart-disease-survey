@@ -1,0 +1,33 @@
+export interface IAnswer {
+  id: string;
+  ans1?: { points: number; text: string };
+  ans2?: { points: number; text: string };
+  ans3?: { points: number; text: string };
+  ans4?: { points: number; text: string };
+  ans5?: { points: number; text: string };
+  ans6?: { points: number; text: string };
+  ans7?: { points: number; text: string };
+  ans8?: { points: number; text: string };
+  ans9?: { points: number; text: string };
+  ans10?: { points: number; text: string };
+  ans11?: { points: number; text: string };
+  ans12?: { points: number; text: string };
+  ans13?: { points: number; text: string };
+  ans14?: { points: number; text: string };
+  ans15?: { points: number; text: string };
+  ans16?: { points: number; text: string };
+  ans17?: { points: number; text: string };
+  ans18?: { points: number; text: string };
+  ans19?: { points: number; text: string };
+  ans20?: { points: number; text: string };
+  ans21?: { points: number; text: string };
+  ans22?: { points: number; text: string };
+  ans23?: { points: number; text: string };
+  ans24?: { points: number; text: string };
+  ans25?: { points: number; text: string };
+  ans26?: { points: number; text: string };
+  ans27?: { points: number; text: string };
+  ans28?: { points: number; text: string };
+  ans29?: { points: number; text: string };
+  ans30?: { points: number; text: string };
+}

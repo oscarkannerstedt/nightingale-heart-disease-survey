@@ -1,7 +1,7 @@
 export const texts = [
     {
-        age: {
-            id: 2,
+        1: {
+            id: "1",
             ans1: {
                 text: "Under 30",
                 points: 0,
@@ -49,8 +49,8 @@ export const texts = [
         },
     },
     {
-        cardiovascularHistory: {
-            id: 3,
+        2: {
+            id: "2",
             ans1: {
                 text: "Do you have diagnosed cardiovascular disease, atherosclerosis, previous heart attack, and/or previous stroke",
                 points: 100,
@@ -67,8 +67,8 @@ export const texts = [
         }
     },
     {
-        familyHistory: {
-            id: 4,
+        3: {
+            id: "3",
             ans1: {
                 text: "Mother with Cardiovascular Disease at less than 65 years(high blood pressure, heart attack,angina, stroke, hardening of the arteries)",
                 points: 15,
@@ -84,8 +84,8 @@ export const texts = [
         }
     },
     {
-        lifestyle: {
-            id: 5,
+        4: {
+            id: "4",
             ans1: {
                 text: "Sedentary – moderate exercise less than once a week",
                 points: 20,
@@ -110,8 +110,8 @@ export const texts = [
         }
     },
     {
-        smoking: {
-            id: 6,
+        5: {
+            id: "5",
             ans1: {
                 text: "Never smoked",
                 points: 0,
@@ -131,8 +131,8 @@ export const texts = [
         }
     },
     {
-        passiveSmoking: {
-            id: 7,
+        6: {
+            id: "6",
             ans1: {
                 text: "Yes",
                 points: 25,
@@ -145,8 +145,8 @@ export const texts = [
         }
     },
     {
-        Alcohol1: {
-            id: 8,
+        7: {
+            id: "7",
             ans1: {
                 text: "Average 0 drinks daily",
                 points: 0,
@@ -166,8 +166,8 @@ export const texts = [
         }
     },
     {
-        Alcohol2: {
-            id: 9,
+        8: {
+            id: "8",
             ans1: {
                 text: "Do you consume: Male: 5 or more drinks Female: 3 or more drinks in one sitting on a fortnightly or more frequent basis?",
                 points: 7,
@@ -179,8 +179,8 @@ export const texts = [
         }
     },
     {
-        environment: {
-            id: 10,
+        9: {
+            id: "9",
             ans1: {
                 text: "Do you live on a main road?",
                 points: 4,
@@ -204,8 +204,8 @@ export const texts = [
         }
     },
     {
-        stress: {
-            id: 11,
+        10: {
+            id: "10",
             ans1: {
                 text: "Death of spouse",
                 points: 30,
@@ -329,8 +329,8 @@ export const texts = [
         }
     },
     {
-        activities: {
-            id: 12,
+        11: {
+            id: "11",
             ans1: {
                 text: "Meditation/prayer",
                 points: -5,
@@ -350,8 +350,8 @@ export const texts = [
         }
     },
     {
-        anxiety: {
-            id: 13,
+        12: {
+            id: "12",
             ans1: {
                 text: "Weekly or more",
                 points: 40,
@@ -367,8 +367,8 @@ export const texts = [
         },
     },
     {
-        sadness: {
-            id: 14,
+        13: {
+            id: "13",
             ans1: {
                 text: "Weekly or more",
                 points: 30,
@@ -384,8 +384,8 @@ export const texts = [
         },
     },
     {
-        frustrated: {
-            id: 15,
+        14: {
+            id: "14",
             ans1: {
                 text: "Weekly or more",
                 points: 25,
@@ -401,8 +401,8 @@ export const texts = [
         }
     },
     {
-        sleepPerNight: {
-            id: 16,
+        15: {
+            id: "15",
             ans1: {
                 text: "0-4",
                 points: 6,
@@ -422,8 +422,8 @@ export const texts = [
         },
     },
     {
-        sleepExperience: {
-            id: 17,
+        16: {
+            id: "16",
             ans1: {
                 text: "Snoring",
                 points: 3,
@@ -443,8 +443,8 @@ export const texts = [
         }
     },
     {
-        abdominalPain: {
-            id: 18,
+        17: {
+            id: "17",
             ans1: {
                 text: "Yes",
                 points: 8,
@@ -456,8 +456,8 @@ export const texts = [
         },
     },
     {
-        contraceptivePill: {
-            id: 19,
+        18: {
+            id: "18",
             ans1: {
                 text: "Yes",
                 points: 5,
@@ -469,8 +469,8 @@ export const texts = [
         },
     },
     {
-        antibiotics: {
-            id: 20,
+        19: {
+            id: "19",
             ans1: {
                 text: "Less than 2 weeks",
                 points: 0,
@@ -490,8 +490,8 @@ export const texts = [
         }
     },
     {
-        bloodSugar: {
-            id: 21,
+        20: {
+            id: "20",
             ans1: {
                 text: "Do you feel your energy levels drop within an hour of eating? and / or Do you experience cravings for sweets or chocolate? and / or Do you have headaches or an inability to concentrate which is relieved by eating?",
                 points: 10,
@@ -503,8 +503,8 @@ export const texts = [
         }
     },
     {
-        diabetic: {
-            id: 22,
+        21: {
+            id: "21",
             ans1: {
                 text: "Yes",
                 points: 100,
@@ -516,8 +516,8 @@ export const texts = [
         }
     },
     {
-        wheezing: {
-            id: 23,
+        22: {
+            id: "22",
             ans1: {
                 text: "Wheezing, sneezing, a runny nose, sore throat, itchy or watery eyes, coughing and/ or blocked nose",
                 points: 5
@@ -533,8 +533,8 @@ export const texts = [
         }
     },
     {
-        recurrentPain: {
-            id: 24,
+        23: {
+            id: "23",
             ans1: {
                 text: "Daily",
                 points: 30,
@@ -554,8 +554,8 @@ export const texts = [
         }
     },
     {
-        friedFoods: {
-            id: 25,
+        24: {
+            id: "24",
             ans1: {
                 text: "Less than once a week",
                 points: 0,
@@ -575,8 +575,8 @@ export const texts = [
         }
     },
     {
-        bread: {
-            id: 26,
+        25: {
+            id: "25",
             ans1: {
                 text: "0 - 1 serves daily",
                 points: 0,
@@ -596,8 +596,8 @@ export const texts = [
         }
     },
     {
-        sweetFoods: {
-            id: 27,
+        26: {
+            id: "26",
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -613,8 +613,8 @@ export const texts = [
         }
     },
     {
-        sugar: {
-            id: 28,
+        27: {
+            id: "27",
             ans1: {
                 text: "0 - 3",
                 points: 0,
@@ -634,8 +634,8 @@ export const texts = [
         }
     },
     {
-        fish: {
-            id: 29,
+        28: {
+            id: "28",
             ans1: {
                 text: "Rarely",
                 points: 0
@@ -655,8 +655,8 @@ export const texts = [
         }
     },
     {
-        fruit: {
-            id: 30,
+        29: {
+            id: "29",
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -672,8 +672,8 @@ export const texts = [
         }
     },
     {
-        vegetables: {
-            id: 31,
+        30: {
+            id: "30",
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -693,8 +693,8 @@ export const texts = [
         }
     },
     {
-        coffe: {
-            id: 32,
+        31: {
+            id: "31",
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -714,8 +714,8 @@ export const texts = [
         }
     },
     {
-        softDrink: {
-            id: 33,
+        32: {
+            id: "32",
             ans1: {
                 text: "Less than 500 ml per week",
                 points: 0
@@ -735,8 +735,8 @@ export const texts = [
         }
     },
     {
-        water: {
-            id: 34,
+        33: {
+            id: "33",
             ans1: {
                 text: "0 - 500 ml",
                 points: 7

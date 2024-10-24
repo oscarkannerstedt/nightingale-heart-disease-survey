@@ -1,47 +1,131 @@
-import React from "react";
-import { questions } from "../qna/qustions";
-import { SurveyAnswer } from "../types/surveyAnswer";
-import { calculateTotalScore } from "../utils/calculateTotalScore";
+// import React, { useState } from "react";
+// import { questions } from "../qna/qustions";
+// import { SurveyAnswer } from "../types/surveyAnswer";
+// import { texts } from "../qna/answers";
+// // import { calculateTotalScore } from "../utils/calculateTotalScore";
 
-interface DisplayDataProps {
-  data: SurveyAnswer[];
-}
+// interface Answer {
+//   text: string;
+//   points: number;
+// }
 
-export const DisplayData: React.FC<DisplayDataProps> = ({ data = [] }) => {
-  console.log("Data: ", data);
+// interface QuestionAnswers {
+//   id: string;
+//   ans1?: Answer;
+//   ans2?: Answer;
+//   ans3?: Answer;
+//   ans4?: Answer;
+//   ans5?: Answer;
+//   ans6?: Answer;
+//   ans7?: Answer;
+//   ans8?: Answer;
+//   ans9?: Answer;
+//   ans10?: Answer;
+//   ans11?: Answer;
+//   ans12?: Answer;
+//   ans13?: Answer;
+//   ans14?: Answer;
+//   ans15?: Answer;
+//   ans16?: Answer;
+//   ans17?: Answer;
+//   ans18?: Answer;
+//   ans19?: Answer;
+//   ans20?: Answer;
+//   ans21?: Answer;
+//   ans22?: Answer;
+//   ans23?: Answer;
+//   ans24?: Answer;
+//   ans25?: Answer;
+//   ans26?: Answer;
+//   ans27?: Answer;
+//   ans28?: Answer;
+//   ans29?: Answer;
+//   ans30?: Answer;
+//   ans31?: Answer;
+//   ans32?: Answer;
+//   ans33?: Answer;
+// }
 
-  const { filteredData, totalScore } = calculateTotalScore(data);
+// type TextsArray = Array<{ [key: number]: QuestionAnswers }>;
 
-  return (
-    <div>
-      <h1>Data from specifik user</h1>
-      <h2>Total score: {totalScore}</h2>
-      <ul className="cards">
-        {questions.length > 0 ? (
-          questions.map((question) => (
-            <li key={question.id} className="question-card">
-              {question.title && <h2>{question.title}</h2>}
-              {question.question && <p>{question.question}</p>}
-            </li>
-          ))
-        ) : (
-          <li>No questions available</li>
-        )}
-      </ul>
+// /*
+// interface DisplayDataProps {
+//   data: SurveyAnswer[];
+// }
+// */
 
-      <ul>
-        {filteredData.length > 0 ? (
-          filteredData.map((item, index) => (
-            <li key={index}>
-              <p>Participant ID: {item.participantID}</p>
-              <p>Answers: {item.response}</p>
-              <p>Date: {item.date}</p>
-            </li>
-          ))
-        ) : (
-          <li>No data available</li>
-        )}
-      </ul>
-    </div>
-  );
-};
+// export const DisplayData: React.FC = () => {
+//   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+//   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+
+//   // const { filteredData, totalScore } = calculateTotalScore(data);
+
+//   const handleNextQuestion = () => {
+//     if (currentQuestionIndex < questions.length - 1) {
+//       setCurrentQuestionIndex(currentQuestionIndex + 1);
+//       setSelectedAnswer(null);
+//     } else {
+//       console.log("All answers have been answered");
+//     }
+//   };
+
+//   const handleAnswerSelect = (answer: string) => {
+//     setSelectedAnswer(answer);
+//   };
+
+//   const currentQuestion = questions[currentQuestionIndex];
+
+//   const getAnswersForCurrentQuestion = () => {
+//     const questionId = currentQuestion.id;
+
+//     const matchingQuestion = texts.find((text) => text[Number(questionId)]);
+
+//     if (matchingQuestion) {
+//       const answersObject = matchingQuestion[Number(questionId)] as QuestionAnswers; // Access the answers for the matched question
+
+//       // Use Object.values to get answers and filter for valid answer objects
+//       return Object.values(answersObject).filter(
+//         (answer: any) => typeof answer === 'object' && answer.text // Only return answer objects
+//       );
+//     }
+
+//     return [];
+//   };
+
+//   const currentAnswers = getAnswersForCurrentQuestion();
+
+//   return (
+//     <div>
+//       {/* <h2>Total score: {totalScore}</h2> */}
+//       <h1>Questions about heart diseases</h1>
+
+//       {currentQuestion && (
+//         <div>
+//           <h2>{currentQuestion.title}</h2>
+//           {currentQuestion.question && <p>{currentQuestion.question}</p>}
+
+//           {currentAnswers.length > 0 && (
+//             <ul>
+//               {currentAnswers.map((answerObj: Answer, index: number) => (
+//                 <li key={index}>
+//                   <label>
+//                     <input
+//                       type="radio"
+//                       name="answer"
+//                       value={answerObj.text}
+//                       onChange={() => handleAnswerSelect(answerObj.text)}
+//                       checked={selectedAnswer === answerObj.text}
+//                     />
+//                     {answerObj.text}
+//                   </label>
+//                 </li>
+//               ))}
+//             </ul>
+//           )}
+
+//           <button onClick={handleNextQuestion}>Next question</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
