@@ -1,8 +1,13 @@
-//import { DisplayData } from "../components/DisplayData"
+import QuestionDisplay from "../components/QuestionDisplay"
+import "../style/Survey.scss";
 
 export const Survey = () => {
     return <>
         Survey
-        {/*<DisplayData data={[]} />*/}
+        <div className="home-container">
+            <div className="content-box">
+                <QuestionDisplay />
+            </div>
+        </div>
     </>
 }

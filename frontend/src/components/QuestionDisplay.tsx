@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { questions } from "../qna/questions";
 import { texts } from "../qna/answers";
+import "../style/Survey.scss";
 
 interface Answer {
   text: string;
@@ -48,25 +49,28 @@ const QuestionDisplay: React.FC = () => {
     <div>
       <h2>{currentQuestion.title}</h2>
       <p>{currentQuestion.question}</p>
-      <ul>
-        {answerKeys.map((key) => {
-          const answer = currentAnswers?.[key];
-          return (
-            <li key={key}>
-              <label>
-                <input
-                  type="radio"
-                  name="answer"
-                  value={answerKeys}
-                  checked={selectedAnswer === answer?.text}
-                  onChange={() => answer && setSelectedAnswer(answer.text)}
-                />
-                {answer?.text}
-              </label>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="answer-box">
+        <ul className="answers">
+          {answerKeys.map((key) => {
+            const answer = currentAnswers?.[key];
+            return (
+              <li key={key}>
+                <label className="answer-item">
+                  <input
+                    type="radio"
+                    name="answer"
+                    value={answerKeys}
+                    checked={selectedAnswer === answer?.text}
+                    onChange={() => answer && setSelectedAnswer(answer.text)}
+                    className="radio-circle"
+                  />
+                  {answer?.text}
+                </label>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <button onClick={handleNextQuestion} disabled={!selectedAnswer}>
         Next Question
       </button>
