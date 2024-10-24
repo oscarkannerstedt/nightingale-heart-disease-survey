@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { DisplayData } from "../components/DisplayData";
+//import { DisplayData } from "../components/DisplayData";
 
 interface SurveyAnswer {
   id: string;
@@ -57,7 +57,7 @@ export const DataFetcher = () => {
 
   return (
     <div>
-      <DisplayData />
+      {/*<DisplayData />*/}
     </div>
   );
 };

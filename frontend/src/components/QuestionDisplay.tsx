@@ -1,26 +1,21 @@
 import React, { useState } from "react";
-import { questions } from "../qna/qustions";
+import { questions } from "../qna/questions";
 import { texts } from "../qna/answers";
 
 interface Answer {
   text: string;
-  points: number;
+  points: string;
 }
 
-interface Question {
-  id: string;
-  ans1: Answer;
-  ans2: Answer;
-  ans3: Answer;
-  ans4: Answer;
-  ans5: Answer;
-  ans6: Answer;
-  ans7: Answer;
-  ans8: Answer;
-  ans9: Answer;
-  ans10: Answer;
-  ans11: Answer;
-}
+type QuestionAnswers = {
+  [key: number]: {
+    id: string;
+    answers: {
+      [key: string]: Answer; // assuming answer options are stored as strings
+    };
+  };
+};
+
 
 const QuestionDisplay: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -29,21 +24,25 @@ const QuestionDisplay: React.FC = () => {
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null); // Återställ valt svar för nästa fråga
+      setSelectedAnswer(null);
     } else {
-      // Hantera slutet av frågorna
       console.log("Inga fler frågor!");
     }
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-  const currentAnswers = texts[currentQuestionIndex] as Question;
-  console.log("Current Answers:", currentAnswers);
+  const questionId = currentQuestion.id;
+  const currentAnswers = texts[questionId - 1]?.[questionId];
 
   // Hämta svarsalternativ med ans-prefix
   const answerKeys = currentAnswers
     ? Object.keys(currentAnswers).filter((key) => key.startsWith("ans"))
     : [];
+
+  console.log(currentAnswers);
+
+  console.log(answerKeys);
+
 
   return (
     <div>
@@ -51,18 +50,18 @@ const QuestionDisplay: React.FC = () => {
       <p>{currentQuestion.question}</p>
       <ul>
         {answerKeys.map((key) => {
-          const answer = currentAnswers[key] as Answer;
+          const answer = currentAnswers?.[key];
           return (
             <li key={key}>
               <label>
                 <input
                   type="radio"
                   name="answer"
-                  value={answer.text}
-                  checked={selectedAnswer === answer.text}
-                  onChange={() => setSelectedAnswer(answer.text)} // Sätt valt svar
+                  value={answerKeys}
+                  checked={selectedAnswer === answer?.text}
+                  onChange={() => answer && setSelectedAnswer(answer.text)}
                 />
-                {answer.text}
+                {answer?.text}
               </label>
             </li>
           );
