@@ -23,7 +23,7 @@ header::after {
   content: "";
   display: block;
   height: 4px;
-  background-color: red;
+  background-color: #c1002a;
   width: 100%;
   position: absolute;
   bottom: 0;
