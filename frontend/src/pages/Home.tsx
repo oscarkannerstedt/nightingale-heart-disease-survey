@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "../style/Home.css";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   const handleStart = () => {
-    console.log("Frågorna skall dyka upp nu");
+    navigate("/survey");
   };
 
   return (
