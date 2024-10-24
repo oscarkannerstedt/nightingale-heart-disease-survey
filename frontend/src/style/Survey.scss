@@ -1,3 +1,11 @@
+@mixin primary-red-color {
+    background-color: #C1002A;
+}
+
+.current-question {
+    text-align: right;
+}
+
 .answers {
     width: auto;
     list-style: none;
@@ -8,11 +16,19 @@
     padding: 0;
 }
 
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+}
+
 .answer-item {
     display: flex;
     flex-direction: row;
     padding: 10px 0;
     gap: 30px;
+    cursor: pointer;
 }
 
 .answer-item input {
@@ -34,8 +50,9 @@
     margin-right: 5px;
     width: 1em;
     height: 1em;
-    border: 2px solid red;
+    border: 2px solid #C1002A;
     background: white;
+    cursor: pointer;
 }
 
 .answer-item input:after {
@@ -43,7 +60,7 @@
     display: block;
     width: 0.65em;
     height: 0.65em;
-    background: red;
+    background: #C1002A;
     position: absolute;
     border-radius: 50%;
     top: 20%;
@@ -53,6 +70,7 @@
     transform-origin: center;
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
     margin-left: 0.33em;
+    cursor: pointer;
 }
 
 .answer-item input:checked:after {
@@ -63,4 +81,15 @@
 .answer-box {
     display: flex;
     flex-direction: column;
+}
+
+.survey-button {
+    @include primary-red-color();
+    padding: 10px;
+    width: auto;
+    color: white;
+    margin-top: 30px;
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
 }

@@ -46,34 +46,37 @@ const QuestionDisplay: React.FC = () => {
 
 
   return (
-    <div>
-      <h2>{currentQuestion.title}</h2>
-      <p>{currentQuestion.question}</p>
-      <div className="answer-box">
-        <ul className="answers">
-          {answerKeys.map((key) => {
-            const answer = currentAnswers?.[key];
-            return (
-              <li key={key}>
-                <label className="answer-item">
-                  <input
-                    type="radio"
-                    name="answer"
-                    value={answerKeys}
-                    checked={selectedAnswer === answer?.text}
-                    onChange={() => answer && setSelectedAnswer(answer.text)}
-                    className="radio-circle"
-                  />
-                  {answer?.text}
-                </label>
-              </li>
-            );
-          })}
-        </ul>
+    <div className="home-container">
+      <div className="content-box">
+        <p className="current-question">Question {currentQuestionIndex + 1} of 33</p>
+        <h2>{currentQuestion.title}</h2>
+        <p>{currentQuestion.question}</p>
+        <div className="answer-box">
+          <ul className={`answers ${answerKeys.length > 6 ? 'two-column' : ''}`}>
+            {answerKeys.map((key) => {
+              const answer = currentAnswers?.[key];
+              return (
+                <li key={key}>
+                  <label className="answer-item">
+                    <input
+                      type="radio"
+                      name="answer"
+                      value={answerKeys}
+                      checked={selectedAnswer === answer?.text}
+                      onChange={() => answer && setSelectedAnswer(answer.text)}
+                      className="radio-circle"
+                    />
+                    {answer?.text}
+                  </label>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <button onClick={handleNextQuestion} disabled={!selectedAnswer} className="survey-button">
+          Next Question
+        </button>
       </div>
-      <button onClick={handleNextQuestion} disabled={!selectedAnswer}>
-        Next Question
-      </button>
     </div>
   );
 };
