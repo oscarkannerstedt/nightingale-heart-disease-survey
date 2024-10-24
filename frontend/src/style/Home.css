@@ -1,0 +1,37 @@
+.content-box {
+  background-color: white;
+  padding: 80px;
+  width: 80%;
+  /* max-width: 900px; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content-box h1 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: black;
+}
+
+.content-box p {
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  color: black;
+}
+
+.start-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.start-button:hover {
+  background-color: darkred;
+}
