@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       {/*<DataFetcher />*/}
-      <DisplayData data={[]} />
+      {/* <DisplayData data={[]} /> */}
+      <RouterProvider router={router} />
+      <QuestionDisplay />
     </>
   );
 }

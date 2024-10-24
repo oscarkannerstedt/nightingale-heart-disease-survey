@@ -37,7 +37,7 @@ const QuestionDisplay: React.FC = () => {
   };
 
   const currentQuestion = questions[currentQuestionIndex];
-  const currentAnswers = texts[currentQuestionIndex];
+  const currentAnswers = texts[currentQuestionIndex] as Question;
   console.log("Current Answers:", currentAnswers);
 
   // Hämta svarsalternativ med ans-prefix
@@ -51,7 +51,7 @@ const QuestionDisplay: React.FC = () => {
       <p>{currentQuestion.question}</p>
       <ul>
         {answerKeys.map((key) => {
-          const answer = currentAnswers;
+          const answer = currentAnswers[key] as Answer;
           return (
             <li key={key}>
               <label>
