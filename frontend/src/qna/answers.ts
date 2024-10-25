@@ -52,7 +52,7 @@ export const texts = [
     {
         2: {
             id: "2",
-            multipleChoice: false,
+            multipleChoice: true,
             ans1: {
                 text: "Do you have diagnosed cardiovascular disease, atherosclerosis, previous heart attack, and/or previous stroke",
                 points: 100,
@@ -71,7 +71,7 @@ export const texts = [
     {
         3: {
             id: "3",
-            multipleChoice: false,
+            multipleChoice: true,
             ans1: {
                 text: "Mother with Cardiovascular Disease at less than 65 years(high blood pressure, heart attack,angina, stroke, hardening of the arteries)",
                 points: 15,
