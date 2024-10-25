@@ -138,8 +138,4 @@ export const questions = [
         id: 33,
         question: "How much water do you drink a day?",
     },
-    {
-        id: 34,
-        title: "Thank you for your answers!",
-    },
 ];

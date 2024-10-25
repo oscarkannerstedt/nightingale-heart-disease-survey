@@ -32,7 +32,7 @@ const QuestionDisplay: React.FC = () => {
       }
     }
 
-    setSelectedAnswer(answerKey);
+    setSelectedAnswer([answerKey]);
     updateScore(points);
   };
 
@@ -83,11 +83,16 @@ const QuestionDisplay: React.FC = () => {
                       type={isMultipleChoice ? "checkbox" : "radio"}
                       name="answer"
                       value={key}
-                      checked={selectedAnswer.includes(key || {selectedAnswer === key})}
-                      onChange={() => handleAnswerSelect(key), handleAnswerChange(key, answer.points)}
-                      //onChange={() =>
-                        //answer && handleAnswerChange(key, answer.points)
-                      //}
+                      checked={selectedAnswer.includes(key)}
+                      onChange={() => {
+                        handleAnswerSelect(key);
+                        if (answer) {
+                          handleAnswerChange(key, answer.points);
+                        }
+                      }}
+                    //onChange={() =>
+                    //answer && handleAnswerChange(key, answer.points)
+                    //}
                     />
                     {answer?.text}
                   </label>
