@@ -83,7 +83,11 @@ export const texts = [
             ans3: {
                 text: "Parent with Type II Diabetes (adult-onset diabetes)",
                 points: 15,
-            }
+            },
+            ans4: {
+              text: "None of the above",
+              points: 0,
+            },
         }
     },
     {
