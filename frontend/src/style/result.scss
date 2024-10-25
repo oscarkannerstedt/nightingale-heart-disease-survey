@@ -47,3 +47,45 @@
     }
   }
 }
+
+@media (min-width: 1300px) {
+  .result-container {
+    .content-box {
+      h1 {
+        margin-bottom: 65px;
+        margin-top: 60px;
+        font-size: 2.1em;
+      }
+
+      p {
+        font-size: 1.4em;
+      }
+
+      .buttons-group {
+        gap: 60px;
+        margin-bottom: 60px;
+
+        .handleRestartButton,
+        .handleBackToHomeButton {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .result-container {
+    padding-top: 200px;
+
+    .content-box {
+      h1 {
+        margin-top: 70px;
+      }
+
+      .buttons-group {
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
