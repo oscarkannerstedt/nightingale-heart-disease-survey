@@ -3,13 +3,15 @@ import { useScore } from "../hooks/useScore";
 
 export const Result = () => {
   const navigate = useNavigate();
-  const { totalScore } = useScore();
+  const { totalScore, resetScore } = useScore();
 
   const handleRestart = () => {
+    resetScore();
     navigate("/survey");
   };
 
   const handleBackToHome = () => {
+    resetScore();
     navigate("/");
   };
 

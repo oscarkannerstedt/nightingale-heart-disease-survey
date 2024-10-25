@@ -14,5 +14,10 @@ export const useScore = () => {
     });
   };
 
-  return { totalScore, updateScore };
+  const resetScore = () => {
+    setTotalScore(0);
+    localStorage.removeItem("totalScore");
+  };
+
+  return { totalScore, updateScore, resetScore };
 };
