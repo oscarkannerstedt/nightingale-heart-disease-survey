@@ -14,6 +14,10 @@
     align-items: flex-start;
     margin: 0 auto 0 auto;
     padding: 0;
+
+    li {
+        width: 100%;
+    }
 }
 
 .two-column {
@@ -24,11 +28,13 @@
 }
 
 .answer-item {
+    width: auto;
     display: flex;
     flex-direction: row;
     padding: 10px 0;
     gap: 30px;
     cursor: pointer;
+    margin: 0 auto 0 auto;
 }
 
 .answer-item input {

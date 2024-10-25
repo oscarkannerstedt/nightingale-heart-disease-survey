@@ -49,19 +49,15 @@ const QuestionDisplay: React.FC = () => {
   const isMultipleChoice = currentAnswers?.multipleChoice || false;
 
   console.log(currentAnswers);
-
   console.log(answerKeys);
-
   console.log(isMultipleChoice);
-
-
 
   return (
     <div className="home-container">
       <div className="content-box">
         <p className="current-question">Question {currentQuestionIndex + 1} of 33</p>
         <h2>{currentQuestion.title}</h2>
-        <p>{currentQuestion.question}</p>
+        <p className="question-text">{currentQuestion.question}</p>
         <div className="answer-box">
           <ul className={`answers ${answerKeys.length > 10 ? 'two-column' : ''}`}>
             {answerKeys.map((key) => {
