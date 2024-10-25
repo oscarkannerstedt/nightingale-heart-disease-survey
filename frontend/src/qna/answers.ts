@@ -2,6 +2,7 @@ export const texts = [
     {
         1: {
             id: "1",
+            multipleChoice: false,
             ans1: {
                 text: "Under 30",
                 points: 0,
@@ -51,6 +52,7 @@ export const texts = [
     {
         2: {
             id: "2",
+            multipleChoice: false,
             ans1: {
                 text: "Do you have diagnosed cardiovascular disease, atherosclerosis, previous heart attack, and/or previous stroke",
                 points: 100,
@@ -69,6 +71,7 @@ export const texts = [
     {
         3: {
             id: "3",
+            multipleChoice: false,
             ans1: {
                 text: "Mother with Cardiovascular Disease at less than 65 years(high blood pressure, heart attack,angina, stroke, hardening of the arteries)",
                 points: 15,
@@ -86,6 +89,7 @@ export const texts = [
     {
         4: {
             id: "4",
+            multipleChoice: false,
             ans1: {
                 text: "Sedentary – moderate exercise less than once a week",
                 points: 20,
@@ -112,6 +116,7 @@ export const texts = [
     {
         5: {
             id: "5",
+            multipleChoice: false,
             ans1: {
                 text: "Never smoked",
                 points: 0,
@@ -133,6 +138,7 @@ export const texts = [
     {
         6: {
             id: "6",
+            multipleChoice: false,
             ans1: {
                 text: "Yes",
                 points: 25,
@@ -147,6 +153,7 @@ export const texts = [
     {
         7: {
             id: "7",
+            multipleChoice: false,
             ans1: {
                 text: "Average 0 drinks daily",
                 points: 0,
@@ -168,6 +175,7 @@ export const texts = [
     {
         8: {
             id: "8",
+            multipleChoice: false,
             ans1: {
                 text: "Do you consume: Male: 5 or more drinks Female: 3 or more drinks in one sitting on a fortnightly or more frequent basis?",
                 points: 7,
@@ -181,6 +189,7 @@ export const texts = [
     {
         9: {
             id: "9",
+            multipleChoice: false,
             ans1: {
                 text: "Do you live on a main road?",
                 points: 4,
@@ -206,6 +215,7 @@ export const texts = [
     {
         10: {
             id: "10",
+            multipleChoice: true,
             ans1: {
                 text: "Death of spouse",
                 points: 30,
@@ -331,6 +341,7 @@ export const texts = [
     {
         11: {
             id: "11",
+            multipleChoice: true,
             ans1: {
                 text: "Meditation/prayer",
                 points: -5,
@@ -352,6 +363,7 @@ export const texts = [
     {
         12: {
             id: "12",
+            multipleChoice: false,
             ans1: {
                 text: "Weekly or more",
                 points: 40,
@@ -369,6 +381,7 @@ export const texts = [
     {
         13: {
             id: "13",
+            multipleChoice: false,
             ans1: {
                 text: "Weekly or more",
                 points: 30,
@@ -386,6 +399,7 @@ export const texts = [
     {
         14: {
             id: "14",
+            multipleChoice: false,
             ans1: {
                 text: "Weekly or more",
                 points: 25,
@@ -403,6 +417,7 @@ export const texts = [
     {
         15: {
             id: "15",
+            multipleChoice: false,
             ans1: {
                 text: "0-4",
                 points: 6,
@@ -424,6 +439,7 @@ export const texts = [
     {
         16: {
             id: "16",
+            multipleChoice: true,
             ans1: {
                 text: "Snoring",
                 points: 3,
@@ -445,6 +461,7 @@ export const texts = [
     {
         17: {
             id: "17",
+            multipleChoice: false,
             ans1: {
                 text: "Yes",
                 points: 8,
@@ -458,6 +475,7 @@ export const texts = [
     {
         18: {
             id: "18",
+            multipleChoice: false,
             ans1: {
                 text: "Yes",
                 points: 5,
@@ -471,6 +489,7 @@ export const texts = [
     {
         19: {
             id: "19",
+            multipleChoice: false,
             ans1: {
                 text: "Less than 2 weeks",
                 points: 0,
@@ -492,6 +511,7 @@ export const texts = [
     {
         20: {
             id: "20",
+            multipleChoice: false,
             ans1: {
                 text: "Do you feel your energy levels drop within an hour of eating? and / or Do you experience cravings for sweets or chocolate? and / or Do you have headaches or an inability to concentrate which is relieved by eating?",
                 points: 10,
@@ -505,6 +525,7 @@ export const texts = [
     {
         21: {
             id: "21",
+            multipleChoice: false,
             ans1: {
                 text: "Yes",
                 points: 100,
@@ -518,6 +539,7 @@ export const texts = [
     {
         22: {
             id: "22",
+            multipleChoice: true,
             ans1: {
                 text: "Wheezing, sneezing, a runny nose, sore throat, itchy or watery eyes, coughing and/ or blocked nose",
                 points: 5
@@ -535,6 +557,7 @@ export const texts = [
     {
         23: {
             id: "23",
+            multipleChoice: false,
             ans1: {
                 text: "Daily",
                 points: 30,
@@ -556,6 +579,7 @@ export const texts = [
     {
         24: {
             id: "24",
+            multipleChoice: false,
             ans1: {
                 text: "Less than once a week",
                 points: 0,
@@ -577,6 +601,7 @@ export const texts = [
     {
         25: {
             id: "25",
+            multipleChoice: false,
             ans1: {
                 text: "0 - 1 serves daily",
                 points: 0,
@@ -598,6 +623,7 @@ export const texts = [
     {
         26: {
             id: "26",
+            multipleChoice: false,
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -615,6 +641,7 @@ export const texts = [
     {
         27: {
             id: "27",
+            multipleChoice: false,
             ans1: {
                 text: "0 - 3",
                 points: 0,
@@ -636,6 +663,7 @@ export const texts = [
     {
         28: {
             id: "28",
+            multipleChoice: false,
             ans1: {
                 text: "Rarely",
                 points: 0
@@ -657,6 +685,7 @@ export const texts = [
     {
         29: {
             id: "29",
+            multipleChoice: false,
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -674,6 +703,7 @@ export const texts = [
     {
         30: {
             id: "30",
+            multipleChoice: false,
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -695,6 +725,7 @@ export const texts = [
     {
         31: {
             id: "31",
+            multipleChoice: false,
             ans1: {
                 text: "Usually none",
                 points: 0
@@ -716,6 +747,7 @@ export const texts = [
     {
         32: {
             id: "32",
+            multipleChoice: false,
             ans1: {
                 text: "Less than 500 ml per week",
                 points: 0
@@ -737,6 +769,7 @@ export const texts = [
     {
         33: {
             id: "33",
+            multipleChoice: false,
             ans1: {
                 text: "0 - 500 ml",
                 points: 7

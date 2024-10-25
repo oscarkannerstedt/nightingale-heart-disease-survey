@@ -8,28 +8,34 @@ interface Answer {
   points: string;
 }
 
-type QuestionAnswers = {
-  [key: number]: {
-    id: string;
-    answers: {
-      [key: string]: Answer; // assuming answer options are stored as strings
-    };
-  };
-};
-
 
 const QuestionDisplay: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
+      setSelectedAnswer([]);
     } else {
       console.log("Inga fler frågor!");
     }
   };
+
+  const handleAnswerSelect = (answerText: string) => {
+    const questionId = questions[currentQuestionIndex].id;
+    const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
+
+    if (isMultipleChoice) {
+      setSelectedAnswer((prev) =>
+        prev.includes(answerText)
+          ? prev.filter((text) => text !== answerText)
+          : [...prev, answerText]
+      );
+    } else {
+      setSelectedAnswer([answerText]);
+    }
+  }
 
   const currentQuestion = questions[currentQuestionIndex];
   const questionId = currentQuestion.id;
@@ -40,9 +46,14 @@ const QuestionDisplay: React.FC = () => {
     ? Object.keys(currentAnswers).filter((key) => key.startsWith("ans"))
     : [];
 
+  const isMultipleChoice = currentAnswers?.multipleChoice || false;
+
   console.log(currentAnswers);
 
   console.log(answerKeys);
+
+  console.log(isMultipleChoice);
+
 
 
   return (
@@ -52,19 +63,18 @@ const QuestionDisplay: React.FC = () => {
         <h2>{currentQuestion.title}</h2>
         <p>{currentQuestion.question}</p>
         <div className="answer-box">
-          <ul className={`answers ${answerKeys.length > 6 ? 'two-column' : ''}`}>
+          <ul className={`answers ${answerKeys.length > 10 ? 'two-column' : ''}`}>
             {answerKeys.map((key) => {
               const answer = currentAnswers?.[key];
               return (
-                <li key={key}>
-                  <label className="answer-item">
+                <li key={key} >
+                  <label className={`answer-item ${isMultipleChoice ? "multiple-choice" : "single-choice"}`}>
                     <input
-                      type="radio"
+                      type={isMultipleChoice ? "checkbox" : "radio"}
                       name="answer"
-                      value={answerKeys}
-                      checked={selectedAnswer === answer?.text}
-                      onChange={() => answer && setSelectedAnswer(answer.text)}
-                      className="radio-circle"
+                      value={key}
+                      checked={selectedAnswer.includes(key)}
+                      onChange={() => handleAnswerSelect(key)}
                     />
                     {answer?.text}
                   </label>
@@ -73,7 +83,11 @@ const QuestionDisplay: React.FC = () => {
             })}
           </ul>
         </div>
-        <button onClick={handleNextQuestion} disabled={!selectedAnswer} className="survey-button">
+        <button
+          onClick={handleNextQuestion}
+          disabled={selectedAnswer.length === 0}
+          className={`survey-button ${selectedAnswer.length === 0 ? 'disabled' : ''}`}
+        >
           Next Question
         </button>
       </div>

@@ -83,6 +83,15 @@
     flex-direction: column;
 }
 
+.multiple-choice input:before {
+    border-radius: 0;
+}
+
+.multiple-choice input:after {
+    @include primary-red-color();
+    border-radius: 0;
+}
+
 .survey-button {
     @include primary-red-color();
     padding: 10px;
@@ -92,4 +101,9 @@
     font-size: 1.3rem;
     border: none;
     cursor: pointer;
+}
+
+.disabled {
+    color: rgb(155, 154, 154);
+    cursor: default;
 }
