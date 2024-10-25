@@ -1,8 +1,7 @@
-//import { DisplayData } from "../components/DisplayData"
+import QuestionDisplay from "../components/QuestionDisplay"
 
 export const Survey = () => {
     return <>
-        Survey
-        {/*<DisplayData data={[]} />*/}
+        <QuestionDisplay />
     </>
 }
