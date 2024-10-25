@@ -1,0 +1,49 @@
+.result-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+
+  .content-box {
+    background-color: white;
+    color: black;
+    padding: 60px;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+
+    h1 {
+      margin-bottom: 65px;
+      margin-top: 40px;
+      font-size: 2em;
+    }
+
+    .buttons-group {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 40px;
+
+      .handleRestartButton,
+      .handleBackToHomeButton {
+        background-color: #c1002a;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .handleBackToHomeButton:hover,
+      .handleRestartButton:hover {
+        background-color: darkred;
+      }
+    }
+  }
+}

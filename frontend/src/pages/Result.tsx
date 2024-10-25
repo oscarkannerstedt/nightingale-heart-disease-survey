@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useScore } from "../hooks/useScore";
+import "../style/result.scss";
 
 export const Result = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export const Result = () => {
     <div className="result-container">
       <div className="content-box">
         <h1>Thank you for taking the survey!</h1>
-        <p>resultat skall komma här! {totalScore}</p>
+        <p>You got {totalScore} points</p>
         <div className="buttons-group">
           <button className="handleRestartButton" onClick={handleRestart}>
             Do survey again
