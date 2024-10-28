@@ -357,6 +357,10 @@ export const texts = [
                     text: "Minor violations of the law",
                     points: 2,
                 },
+                ans31: {
+                    text: "None of the above",
+                    points: 0,
+                },
             }
         }
     },
@@ -380,6 +384,10 @@ export const texts = [
                 ans4: {
                     text: "Play with pets",
                     points: -4,
+                },
+                ans5: {
+                    text: "None of the above",
+                    points: 0,
                 },
             }
         }
