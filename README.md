@@ -1,10 +1,10 @@
 # Nightingale Heart and Cardiovascular survey
 
-# The following should happen 
+## The project description
 
-- The application starts at the home page with info and instructions about the survey.
-- Questions and answers should be displayed when the survey starts, and the answers should update to single or multiple choice options depending of question.
-- At the end of the survey the results should be displayed with the points from the selected answers.
+A survey about your lifestyle and family history to calculate the chances of you getting heart diseases.
+
+We were provided with a pdf made by Metagenics that contained questions that we used for this survey to make sure the question and answers are relevant for this context.
 
 ## Authors
 
@@ -31,6 +31,13 @@
 
 ## Final result
 
+| **Title**              | **Wireframe**  |
+|------------------------|----------------|
+| Start page final version    | ![Start page final version](frontend/src/assets/final-result/Start-page-final.jpeg) |
+| Single choice option final version    | ![Single choice option final version](frontend/src/assets/final-result/Single-choice-final.jpeg) |
+| Multiple choice option final version    | ![Multiple choice option final version](frontend/src/assets/final-result/Multiple-choice-final.jpeg) |
+| Result page final version   | ![Result page final version](frontend/src/assets/final-result/Result-page-final.jpeg) |
+
 ## Start project
 
 ```
@@ -50,4 +57,3 @@ sass
 
 ## Detected errors so far
 - In the QuestionDisplay file, there are errors about "type" issues and we don't currently know how to fix it, but it's not stopping the code itself from working as intended in any way.
-- 
