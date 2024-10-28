@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 const QuestionDisplay: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
-  const { totalScore, updateScore } = useScore();
+  const { totalScore, questionScores, updateScore } = useScore();
+  const { } = useScore();
   const navigate = useNavigate();
 
   const handleNextQuestion = () => {
@@ -20,25 +21,24 @@ const QuestionDisplay: React.FC = () => {
     }
   };
 
-  const handleAnswerChange = (answerKey: string, points: number) => {
+  const handleAnswerChange = (answerKey: string, points: number, key: number) => {
     const questionId = questions[currentQuestionIndex].id;
     const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
 
     setSelectedAnswer((prev) => {
       if (isMultipleChoice) {
         if (prev.includes(answerKey)) {
-          updateScore(-points); // Remove score for deselected answer
+          // Remove score for deselected answer in multiple choice
+          updateScore(questionId, (questionScores[questionId] || 0) - points);
           return prev.filter((answer) => answer !== answerKey);
         } else {
-          updateScore(points); // Add score for newly selected answer
+          // Add score for selected answer in multiple choice
+          updateScore(questionId, (questionScores[questionId] || 0) + points);
           return [...prev, answerKey];
         }
       } else {
-        if (prev.length > 0) {
-          const previousAnswer = currentAnswers?.[prev[0]];
-          if (previousAnswer) updateScore(-previousAnswer.points); // Remove score of previous single answer
-        }
-        updateScore(points);
+        // Replace score for single choice
+        updateScore(questionId, points);
         return [answerKey];
       }
     });
@@ -72,8 +72,6 @@ const QuestionDisplay: React.FC = () => {
 
   const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice || false;
 
-  console.log(currentAnswers);
-  console.log(isMultipleChoice);
   console.log("totalScore", totalScore);
 
   return (
@@ -91,9 +89,8 @@ const QuestionDisplay: React.FC = () => {
               return (
                 <li key={key}>
                   <label
-                    className={`answer-item ${
-                      isMultipleChoice ? "multiple-choice" : "single-choice"
-                    }`}
+                    className={`answer-item ${isMultipleChoice ? "multiple-choice" : "single-choice"
+                      }`}
                   >
                     <input
                       type={isMultipleChoice ? "checkbox" : "radio"}
@@ -116,9 +113,8 @@ const QuestionDisplay: React.FC = () => {
         <button
           onClick={handleNextQuestion}
           disabled={selectedAnswer.length === 0}
-          className={`survey-button ${
-            selectedAnswer.length === 0 ? "disabled" : ""
-          }`}
+          className={`survey-button ${selectedAnswer.length === 0 ? "disabled" : ""
+            }`}
         >
           {currentQuestionIndex === questions.length - 1
             ? "Get Your Risk Score"
