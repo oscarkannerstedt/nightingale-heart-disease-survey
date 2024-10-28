@@ -41,18 +41,19 @@
 .answer-item input {
     display: inline-block;
     position: relative;
-    margin-left: 10px;
     -webkit-appearance: none;
     -webkit-backface-visibility: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .answer-item input:before {
     content: '';
     display: block;
     position: absolute;
-    top: 45%;
-    left: 0;
-    transform: translateY(-50%);
+    top: 0px;
+    left: 0px;
+    //transform: translateY(-50%);
     border-radius: 50%;
     margin-right: 5px;
     width: 1em;
@@ -65,24 +66,23 @@
 .answer-item input:after {
     content: '';
     display: block;
-    width: 0.65em;
-    height: 0.65em;
+    width: 9px;
+    height: 9.5px;
     background: #C1002A;
     position: absolute;
     border-radius: 50%;
-    top: 20%;
-    left: 50%;
+    top: 4px;
+    left: 4px;
     transform: scale(0, 0);
     opacity: 0;
     transform-origin: center;
     transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
-    margin-left: 0.33em;
     cursor: pointer;
 }
 
 .answer-item input:checked:after {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1.1);
 }
 
 .answer-box {
