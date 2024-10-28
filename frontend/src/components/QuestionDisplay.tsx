@@ -5,11 +5,6 @@ import "../style/Survey.scss";
 import { useScore } from "../hooks/useScore";
 import { useNavigate } from "react-router-dom";
 
-interface Answer {
-  text: string;
-  points: number;
-}
-
 const QuestionDisplay: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
@@ -26,17 +21,30 @@ const QuestionDisplay: React.FC = () => {
   };
 
   const handleAnswerChange = (answerKey: string, points: number) => {
-    if (selectedAnswer !== null) {
-      const previousAnswer = currentAnswers?.[selectedAnswer];
-      if (previousAnswer) {
-        updateScore(-previousAnswer.points);
-      }
-    }
+    const questionId = questions[currentQuestionIndex].id;
+    const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
 
-    setSelectedAnswer([answerKey]);
-    updateScore(points);
+    setSelectedAnswer((prev) => {
+      if (isMultipleChoice) {
+        if (prev.includes(answerKey)) {
+          updateScore(-points); // Remove score for deselected answer
+          return prev.filter((answer) => answer !== answerKey);
+        } else {
+          updateScore(points); // Add score for newly selected answer
+          return [...prev, answerKey];
+        }
+      } else {
+        if (prev.length > 0) {
+          const previousAnswer = currentAnswers?.[prev[0]];
+          if (previousAnswer) updateScore(-previousAnswer.points); // Remove score of previous single answer
+        }
+        updateScore(points);
+        return [answerKey];
+      }
+    });
   };
 
+  /*
   const handleAnswerSelect = (answerText: string) => {
     const questionId = questions[currentQuestionIndex].id;
     const isMultipleChoice =
@@ -51,21 +59,20 @@ const QuestionDisplay: React.FC = () => {
     } else {
       setSelectedAnswer([answerText]);
     }
-  };
+  }*/
 
   const currentQuestion = questions[currentQuestionIndex];
   const questionId = currentQuestion.id;
-  const currentAnswers = texts[questionId - 1]?.[questionId];
+  const currentAnswers = texts[questionId - 1]?.[questionId]?.answers;
 
   // Hämta svarsalternativ med ans-prefix
   const answerKeys = currentAnswers
     ? Object.keys(currentAnswers).filter((key) => key.startsWith("ans"))
     : [];
 
-  const isMultipleChoice = currentAnswers?.multipleChoice || false;
+  const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice || false;
 
   console.log(currentAnswers);
-  console.log(answerKeys);
   console.log(isMultipleChoice);
   console.log("totalScore", totalScore);
 
@@ -78,9 +85,7 @@ const QuestionDisplay: React.FC = () => {
         <h2>{currentQuestion.title}</h2>
         <p className="question-text">{currentQuestion.question}</p>
         <div className="answer-box">
-          <ul
-            className={`answers ${answerKeys.length > 10 ? "two-column" : ""}`}
-          >
+          <ul className={`answers ${answerKeys.length > 6 ? 'two-column' : ''}`}>
             {answerKeys.map((key) => {
               const answer = currentAnswers?.[key];
               return (
@@ -92,18 +97,14 @@ const QuestionDisplay: React.FC = () => {
                   >
                     <input
                       type={isMultipleChoice ? "checkbox" : "radio"}
-                      name="answer"
+                      name={`answer-${questionId}`}
                       value={key}
                       checked={selectedAnswer.includes(key)}
                       onChange={() => {
-                        handleAnswerSelect(key);
                         if (answer) {
                           handleAnswerChange(key, answer.points);
                         }
                       }}
-                      //onChange={() =>
-                      //answer && handleAnswerChange(key, answer.points)
-                      //}
                     />
                     {answer?.text}
                   </label>
