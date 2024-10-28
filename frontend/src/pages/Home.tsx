@@ -5,6 +5,7 @@ export const Home = () => {
   const navigate = useNavigate();
 
   const handleStart = () => {
+    localStorage.removeItem("totalScore");
     navigate("/survey");
   };
 
