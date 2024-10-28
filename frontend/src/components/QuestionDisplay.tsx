@@ -3,7 +3,7 @@ import { questions } from "../qna/questions";
 import { texts } from "../qna/answers";
 import "../style/Survey.scss";
 import { useScore } from "../hooks/useScore";
-
+import { useNavigate } from "react-router-dom";
 
 interface Answer {
   text: string;
@@ -14,13 +14,14 @@ const QuestionDisplay: React.FC = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string[]>([]);
   const { totalScore, updateScore } = useScore();
+  const navigate = useNavigate();
 
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer([]);
     } else {
-      console.log("No more questions!");
+      navigate("/result");
     }
   };
 
@@ -38,7 +39,8 @@ const QuestionDisplay: React.FC = () => {
 
   const handleAnswerSelect = (answerText: string) => {
     const questionId = questions[currentQuestionIndex].id;
-    const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
+    const isMultipleChoice =
+      texts[questionId - 1]?.[questionId]?.multipleChoice;
 
     if (isMultipleChoice) {
       setSelectedAnswer((prev) =>
@@ -49,7 +51,7 @@ const QuestionDisplay: React.FC = () => {
     } else {
       setSelectedAnswer([answerText]);
     }
-  }
+  };
 
   const currentQuestion = questions[currentQuestionIndex];
   const questionId = currentQuestion.id;
@@ -65,20 +67,29 @@ const QuestionDisplay: React.FC = () => {
   console.log(currentAnswers);
   console.log(answerKeys);
   console.log(isMultipleChoice);
+  console.log("totalScore", totalScore);
 
   return (
     <div className="home-container">
       <div className="content-box">
-        <p className="current-question">Question {currentQuestionIndex + 1} of 33</p>
+        <p className="current-question">
+          Question {currentQuestionIndex + 1} of 33
+        </p>
         <h2>{currentQuestion.title}</h2>
         <p className="question-text">{currentQuestion.question}</p>
         <div className="answer-box">
-          <ul className={`answers ${answerKeys.length > 10 ? 'two-column' : ''}`}>
+          <ul
+            className={`answers ${answerKeys.length > 10 ? "two-column" : ""}`}
+          >
             {answerKeys.map((key) => {
               const answer = currentAnswers?.[key];
               return (
-                <li key={key} >
-                  <label className={`answer-item ${isMultipleChoice ? "multiple-choice" : "single-choice"}`}>
+                <li key={key}>
+                  <label
+                    className={`answer-item ${
+                      isMultipleChoice ? "multiple-choice" : "single-choice"
+                    }`}
+                  >
                     <input
                       type={isMultipleChoice ? "checkbox" : "radio"}
                       name="answer"
@@ -90,9 +101,9 @@ const QuestionDisplay: React.FC = () => {
                           handleAnswerChange(key, answer.points);
                         }
                       }}
-                    //onChange={() =>
-                    //answer && handleAnswerChange(key, answer.points)
-                    //}
+                      //onChange={() =>
+                      //answer && handleAnswerChange(key, answer.points)
+                      //}
                     />
                     {answer?.text}
                   </label>
@@ -104,9 +115,13 @@ const QuestionDisplay: React.FC = () => {
         <button
           onClick={handleNextQuestion}
           disabled={selectedAnswer.length === 0}
-          className={`survey-button ${selectedAnswer.length === 0 ? 'disabled' : ''}`}
+          className={`survey-button ${
+            selectedAnswer.length === 0 ? "disabled" : ""
+          }`}
         >
-          Next Question
+          {currentQuestionIndex === questions.length - 1
+            ? "Get Your Risk Score"
+            : "Next Question"}
         </button>
       </div>
     </div>
