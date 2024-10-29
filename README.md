@@ -2,9 +2,9 @@
 
 ## The project description
 
-A survey about your lifestyle and family history to calculate the chances of you getting heart diseases.
+As our first assignment during our internship at Johannes Guntenberg Universität Mainz we made a survey about a person's lifestyle and family history to calculate their chances of heart diseases.
 
-We were provided with a pdf made by Metagenics that contained questions that we used for this survey to make sure the question and answers are relevant for this context.
+We were provided with a pdf made by Metagenics that contained questions that we used for this survey to make sure the questions and answers are relevant for the context. There was no design or idea on what the actual website was going to look like, so we decided to take a look at their current website (https://nightingale.uni-mainz.de/) and use that as inspiration to make sure it matched, and then used Figma to create wireframes so we had something to go after.
 
 ## Authors
 
@@ -18,6 +18,7 @@ We were provided with a pdf made by Metagenics that contained questions that we 
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
 ## Initial Wireframes
 
@@ -54,6 +55,10 @@ react-dom
 react-router-dom
 sass
 ```
+
+## Lessons learned
+
+During our schooling we were always provided with clear instructions and info on what we were going to create, so we were kind of spoiled of always having everything on paper, but when working with real companies you can't really expect that and it's something that we weren't really prepared for, but with a lot of asking and discussing we were able to create something that checked their visions and requirements.
 
 ## Detected errors so far
 - In the QuestionDisplay file, there are errors about "type" issues and we don't currently know how to fix it, but it's not stopping the code itself from working as intended in any way.
