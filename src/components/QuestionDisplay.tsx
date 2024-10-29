@@ -21,51 +21,30 @@ const QuestionDisplay: React.FC = () => {
     }
   };
 
-  const handleAnswerChange = (answerKey: string, points: number, key: number) => {
+  const handleAnswerChange = (answerKey: string, points: number) => {
     const questionId = questions[currentQuestionIndex].id;
     const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
 
     setSelectedAnswer((prev) => {
       if (isMultipleChoice) {
         if (prev.includes(answerKey)) {
-          // Remove score for deselected answer in multiple choice
           updateScore(questionId, (questionScores[questionId] || 0) - points);
           return prev.filter((answer) => answer !== answerKey);
         } else {
-          // Add score for selected answer in multiple choice
           updateScore(questionId, (questionScores[questionId] || 0) + points);
           return [...prev, answerKey];
         }
       } else {
-        // Replace score for single choice
         updateScore(questionId, points);
         return [answerKey];
       }
     });
   };
 
-  /*
-  const handleAnswerSelect = (answerText: string) => {
-    const questionId = questions[currentQuestionIndex].id;
-    const isMultipleChoice =
-      texts[questionId - 1]?.[questionId]?.multipleChoice;
-
-    if (isMultipleChoice) {
-      setSelectedAnswer((prev) =>
-        prev.includes(answerText)
-          ? prev.filter((text) => text !== answerText)
-          : [...prev, answerText]
-      );
-    } else {
-      setSelectedAnswer([answerText]);
-    }
-  }*/
-
   const currentQuestion = questions[currentQuestionIndex];
   const questionId = currentQuestion.id;
   const currentAnswers = texts[questionId - 1]?.[questionId]?.answers;
 
-  // Hämta svarsalternativ med ans-prefix
   const answerKeys = currentAnswers
     ? Object.keys(currentAnswers).filter((key) => key.startsWith("ans"))
     : [];

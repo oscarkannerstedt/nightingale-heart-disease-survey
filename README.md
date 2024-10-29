@@ -24,20 +24,20 @@ We were provided with a pdf made by Metagenics that contained questions that we 
 
 | **Title**              | **Wireframe**  |
 |------------------------|----------------|
-| Start page Wireframe     | ![Start page Wireframe](frontend/src/assets/Wireframes/Start-page-Wireframe.png) |
-| Single choice option Wireframe     | ![Single choice option Wireframe](frontend/src/assets/Wireframes/Single-choice-option-Wireframe.png) |
-| Multiple choice option Wireframe    | ![Multiple choice option Wireframe](frontend/src/assets/Wireframes/Multiple-choice-option-Wireframe.png) |
-| Result page Wireframe   | ![Result page Wireframe](frontend/src/assets/Wireframes/Result-page-Wireframe.png) |
+| Start page Wireframe     | ![Start page Wireframe](src/assets/Wireframes/Start-page-Wireframe.png) |
+| Single choice option Wireframe     | ![Single choice option Wireframe](src/assets/Wireframes/Single-choice-option-Wireframe.png) |
+| Multiple choice option Wireframe    | ![Multiple choice option Wireframe](src/assets/Wireframes/Multiple-choice-option-Wireframe.png) |
+| Result page Wireframe   | ![Result page Wireframe](src/assets/Wireframes/Result-page-Wireframe.png) |
 
 
 ## Final result
 
 | **Title**              | **Final result**  |
 |------------------------|----------------|
-| Start page final version    | ![Start page final version](frontend/src/assets/final-result/Start-page-final.jpeg) |
-| Single choice option final version    | ![Single choice option final version](frontend/src/assets/final-result/Single-choice-final.jpeg) |
-| Multiple choice option final version    | ![Multiple choice option final version](frontend/src/assets/final-result/Multiple-choice-final.jpeg) |
-| Result page final version   | ![Result page final version](frontend/src/assets/final-result/Result-page-final.jpeg) |
+| Start page final version    | ![Start page final version](src/assets/final-result/Start-page-final.jpeg) |
+| Single choice option final version    | ![Single choice option final version](src/assets/final-result/Single-choice-final.jpeg) |
+| Multiple choice option final version    | ![Multiple choice option final version](src/assets/final-result/Multiple-choice-final.jpeg) |
+| Result page final version   | ![Result page final version](src/assets/final-result/Result-page-final.jpeg) |
 
 ## Start project
 
