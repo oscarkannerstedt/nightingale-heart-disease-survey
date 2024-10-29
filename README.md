@@ -58,7 +58,7 @@ sass
 
 ## Lessons learned
 
-During our schooling we were always provided with clear instructions and info on what we were going to create, so we were kind of spoiled of always having everything on paper, but when working with real companies you can't really expect that and it's something that we weren't really prepared for, but with a lot of asking and discussing we were able to create something that checked their visions and requirements.
+During our schooling we were always provided with clear instructions and info on what we were going to create, so we were kind of spoiled of always having everything on paper, but when working with real companies you can't really expect that and it's something that we weren't really prepared for, but with a lot of asking and discussion we were able to create something that checked their visions and requirements.
 
 ## Detected errors so far
 - In the QuestionDisplay file, there are errors about "type" issues and we don't currently know how to fix it, but it's not stopping the code itself from working as intended in any way.
