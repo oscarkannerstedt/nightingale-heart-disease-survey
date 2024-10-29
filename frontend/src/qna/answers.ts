@@ -114,7 +114,7 @@ export const texts = [
                     points: -10,
                 },
                 ans4: {
-                    text: "Moderate exercise (average 2 – 3 times per week)",
+                    text: "Moderate exercise (average 4 – 5 times per week)",
                     points: -20,
                 },
                 ans5: {
@@ -666,7 +666,7 @@ export const texts = [
                     points: 0,
                 },
                 ans2: {
-                    text: "2 server daily",
+                    text: "2 serves daily",
                     points: 0,
                 },
                 ans3: {
