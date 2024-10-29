@@ -24,7 +24,7 @@ We were provided with a pdf made by Metagenics that contained questions that we 
 
 | **Title**              | **Wireframe**  |
 |------------------------|----------------|
-| Start page Wireframe     | ![Start page Wireframe](frontend/src/assets/wireframes/Start-page-Wireframe.png) |
+| Start page Wireframe     | ![Start page Wireframe](frontend/src/assets/Wireframes/Start-page-Wireframe.png) |
 | Single choice option Wireframe     | ![Single choice option Wireframe](frontend/src/assets/Wireframes/Single-choice-option-Wireframe.png) |
 | Multiple choice option Wireframe    | ![Multiple choice option Wireframe](frontend/src/assets/Wireframes/Multiple-choice-option-Wireframe.png) |
 | Result page Wireframe   | ![Result page Wireframe](frontend/src/assets/Wireframes/Result-page-Wireframe.png) |
