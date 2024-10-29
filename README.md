@@ -32,7 +32,7 @@ We were provided with a pdf made by Metagenics that contained questions that we 
 
 ## Final result
 
-| **Title**              | **Wireframe**  |
+| **Title**              | **Final result**  |
 |------------------------|----------------|
 | Start page final version    | ![Start page final version](frontend/src/assets/final-result/Start-page-final.jpeg) |
 | Single choice option final version    | ![Single choice option final version](frontend/src/assets/final-result/Single-choice-final.jpeg) |
