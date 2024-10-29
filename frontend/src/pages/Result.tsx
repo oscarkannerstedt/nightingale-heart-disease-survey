@@ -1,19 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import { useScore } from "../hooks/useScore";
 import "../style/result.scss";
+import { useEffect, useState } from "react";
 
 export const Result = () => {
   const navigate = useNavigate();
-  const { totalScore, resetScore } = useScore();
+  const { resetScore } = useScore();
+  const [totalScore, setTotalScore] = useState<number>(0);
+
+  useEffect(() => {
+    const savedScore = localStorage.getItem("totalScore");
+    if (savedScore) {
+      setTotalScore(parseInt(savedScore, 10));
+    }
+  }, []);
 
   const getRiskLevel = () => {
-    if (totalScore >= -88 && totalScore <= 100) {
+    if (totalScore >= -66 && totalScore <= 70) {
       return "low risk";
-    } else if (totalScore >= 101 && totalScore <= 220) {
+    } else if (totalScore >= 71 && totalScore <= 154) {
       return "moderate risk";
-    } else if (totalScore >= 221 && totalScore <= 350) {
+    } else if (totalScore >= 155 && totalScore <= 245) {
       return "high risk";
-    } else if (totalScore >= 351) {
+    } else if (totalScore >= 246) {
       return "very high risk";
     } else {
       return "invalid score";
