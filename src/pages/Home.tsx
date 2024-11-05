@@ -18,7 +18,7 @@ export const Home = () => {
           and cardiovascular history
         </h1>
         <p>
-          The survey contains about 33 questions and takes about 10 mins to
+          The survey contains 33 questions and takes about 5 mins to
           complete.
         </p>
         <p>
