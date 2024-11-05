@@ -23,7 +23,8 @@ const QuestionDisplay: React.FC = () => {
 
   const handleAnswerChange = (answerKey: string, points: number) => {
     const questionId = questions[currentQuestionIndex].id;
-    const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice;
+    const isMultipleChoice = (texts as { [key: number]: any })[questionId - 1]?.[questionId]?.multipleChoice;
+
 
     setSelectedAnswer((prev) => {
       if (isMultipleChoice) {
@@ -43,13 +44,13 @@ const QuestionDisplay: React.FC = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
   const questionId = currentQuestion.id;
-  const currentAnswers = texts[questionId - 1]?.[questionId]?.answers;
+  const currentAnswers = (texts as { [key: number]: any })[questionId - 1]?.[questionId]?.answers;
 
   const answerKeys = currentAnswers
     ? Object.keys(currentAnswers).filter((key) => key.startsWith("ans"))
     : [];
 
-  const isMultipleChoice = texts[questionId - 1]?.[questionId]?.multipleChoice || false;
+  const isMultipleChoice = (texts as { [key: number]: any })[questionId - 1]?.[questionId]?.multipleChoice || false;
 
   console.log("totalScore", totalScore);
 
